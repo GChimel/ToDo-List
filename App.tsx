@@ -6,8 +6,6 @@ import theme from './src/theme';
 
 import Home from './src/screens/Home';
 
-import Header from './src/components/Header'
-
 export default function App() {
 
   const [fontLoaded] = useFonts({
@@ -28,7 +26,7 @@ export default function App() {
         translucent={true}
       />
       {/* Só irá carregar o app se as fontes forem carregadas */}
-      {fontLoaded? <Header/> : <Header/>}
+      {fontLoaded? <Home/> : <Home/>}
     </ThemeProvider>
   );
 }
