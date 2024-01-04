@@ -4,7 +4,9 @@ import { useFonts, Inter_400Regular, Inter_700Bold} from '@expo-google-fonts/int
 import { ThemeProvider } from 'styled-components';
 import theme from './src/theme';
 
-import Home from './src/screens';
+import Home from './src/screens/Home';
+
+import Header from './src/components/Header'
 
 export default function App() {
 
@@ -26,7 +28,7 @@ export default function App() {
         translucent={true}
       />
       {/* Só irá carregar o app se as fontes forem carregadas */}
-      {fontLoaded? <Home/> : <Home/>}
+      {fontLoaded? <Header/> : <Header/>}
     </ThemeProvider>
   );
 }

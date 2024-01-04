@@ -1,0 +1,11 @@
+import { Container, Logo } from './styles'
+
+export default function Header() {
+    return(
+        <Container>
+            <Logo 
+                source={require('../../assets/logo.png')}
+            />
+        </Container>
+    );
+}
