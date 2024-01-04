@@ -1,11 +1,12 @@
 import React from 'react'
 import { Container, Title } from './styles'
-import Input from '../components/Input'
+
+import Task from '../components/Task'
 
 export default function Home() {
   return (
     <Container>
-      <Input/>
+      <Task/>
     </Container>
   )
 }
