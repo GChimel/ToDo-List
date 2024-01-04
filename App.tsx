@@ -1,9 +1,10 @@
 import { StatusBar } from 'react-native';
 import { useFonts, Inter_400Regular, Inter_700Bold} from '@expo-google-fonts/inter';
-import Home from './src/screens';
 
 import { ThemeProvider } from 'styled-components';
 import theme from './src/theme';
+
+import Home from './src/screens';
 
 export default function App() {
 
