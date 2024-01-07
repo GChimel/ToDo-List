@@ -6,7 +6,8 @@ import Input from '../../components/Input'
 
 import Task from '../../components/Task'
 
-import Button from '../../components/Button'
+import PlusButton from '../../components/PlusButton'
+import TrashButton from '../../components/TrashButton'
 
 export default function Home() {
   return (
@@ -15,7 +16,13 @@ export default function Home() {
       <InputContainer>
         <Input/>
       </InputContainer>
-      <Button/>
+
+      <PlusButton
+      />
+      {/* <TrashButton
+       
+      /> */}
+      
     </Container>
   )
 }

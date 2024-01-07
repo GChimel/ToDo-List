@@ -15,6 +15,7 @@ export default  {
         PURPLE_DARK: '#5E60CE',
         PURPLE: '#8284FA',
 
+        GRAY_700: '#0D0D0D',
         GRAY_600: '#1A1A1A',
         GRAY_500: '#262626',
         GRAY_400: '#333333',
