@@ -6,6 +6,8 @@ import Input from '../../components/Input'
 
 import Task from '../../components/Task'
 
+import Button from '../../components/Button'
+
 export default function Home() {
   return (
     <Container>
@@ -13,6 +15,7 @@ export default function Home() {
       <InputContainer>
         <Input/>
       </InputContainer>
+      <Button/>
     </Container>
   )
 }
