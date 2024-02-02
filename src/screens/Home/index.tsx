@@ -3,11 +3,8 @@ import { Container, InputContainer } from './styles'
 
 import Header from '../../components/Header'
 import Input from '../../components/Input'
-
-import Task from '../../components/Task'
-
 import PlusButton from '../../components/PlusButton'
-import TrashButton from '../../components/TrashButton'
+import Stats from '../../components/Stats'
 
 export default function Home() {
   return (
@@ -15,13 +12,15 @@ export default function Home() {
       <Header/>
       <InputContainer>
         <Input/>
+        <PlusButton/>
       </InputContainer>
 
-      <PlusButton
+      <Stats
+        style
+        title='Criadas'
+        
       />
-      {/* <TrashButton
-       
-      /> */}
+      
       
     </Container>
   )

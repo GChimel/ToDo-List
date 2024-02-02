@@ -9,11 +9,9 @@ export default  {
         BOLD: 'Inter_700Bold',
     },
     COLORS: {
-        BLUE_DARK: '#1E6F9F',
-        BLUE: '#4EA8DE',
-
-        PURPLE_DARK: '#5E60CE',
-        PURPLE: '#8284FA',
+        GREEN: '#3ABDC4',
+    
+        RED: '#EC3655',
 
         GRAY_700: '#0D0D0D',
         GRAY_600: '#1A1A1A',

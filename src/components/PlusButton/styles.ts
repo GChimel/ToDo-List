@@ -6,7 +6,12 @@ export const Container = styled(TouchableHighlight)`
     align-items: center;
     justify-content: center;
 
-    background-color: ${({theme}) => theme.COLORS.BLUE_DARK};
+    border-radius: 6px;
+
+    min-height: 56px;
+    min-width: 56px;
+
+    background-color: ${({theme}) => theme.COLORS.GREEN};
 `;
 
 export const Icon = styled(PlusCircle).attrs(({theme}) => ({
