@@ -1,17 +1,17 @@
 import { Container, Title, Counter, CounterText, TextStyleProps } from "./styled";
 
-type Props = TextStyleProps & {
+type Props = {
   title: string;
-  // counter: number;
-  style?: TextStyleProps;
+  counter: number;
+  type?: TextStyleProps;
 };
 
-export default function Stats({title, style = 'PRIMARY'}: Props) {
+export default function Stats({ title, counter, type = 'PRIMARY' }: Props) {
   return (
     <Container>
-      <Title type={style}>{title}</Title>
+      <Title type={type}>{title}</Title>
       <Counter>
-        <CounterText>10</CounterText>
+        <CounterText>{counter}</CounterText>
       </Counter>
     </Container>
   );

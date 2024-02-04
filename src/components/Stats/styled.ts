@@ -6,6 +6,7 @@ type Props = {
   type: TextStyleProps;
 }
 
+
 export const Container = styled.View`
   width: 100%;
 
@@ -27,8 +28,10 @@ export const Counter = styled.View`
   background-color: ${({theme}) => theme.COLORS.GRAY_400};
   
   min-width: 30px;
+  min-height: 20px;
   border-radius: 40px;
-  max-width: 20px;
+
+  margin-left: 5px;
 
   justify-content: center;
   align-items: center;

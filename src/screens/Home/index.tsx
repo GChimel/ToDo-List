@@ -16,9 +16,9 @@ export default function Home() {
       </InputContainer>
 
       <Stats
-        style
-        title='Criadas'
-        
+        type='SECONDARY'
+        title='Tarefas criadas'
+        counter={5}
       />
       
       
