@@ -1,8 +1,7 @@
 import styled from 'styled-components/native';
 import { PlusCircle } from 'phosphor-react-native';
-import { TouchableHighlight } from 'react-native';
 
-export const Container = styled(TouchableHighlight)`
+export const Container = styled.TouchableOpacity`
     align-items: center;
     justify-content: center;
 

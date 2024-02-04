@@ -18,3 +18,12 @@ export const InputContainer = styled.View`
 
   bottom: 30px;
 `;
+
+export const StatsContainer = styled.View`
+  width: 80%;
+
+  margin-bottom: 10px;
+
+  flex-direction: row;
+  justify-content: space-between;
+`;

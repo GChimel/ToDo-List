@@ -8,15 +8,12 @@ type Props = {
 
 
 export const Container = styled.View`
-  width: 100%;
-
   flex-direction: row;
-
 `;
 
 export const Title = styled.Text<Props>`
 
-  color: ${({theme, type}) => type === 'PRIMARY' ? theme.COLORS.RED : theme.COLORS.GREEN};
+  color: ${({theme, type}) => type === 'PRIMARY' ? theme.COLORS.GREEN : theme.COLORS.RED};
 
   ${({theme}) => css`
     font-size: ${theme.FONT_SIZE.M}px;
