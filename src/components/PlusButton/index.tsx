@@ -1,15 +1,12 @@
-import { Container, Icon} from './styles';
-import { TouchableHighlightProps } from 'react-native';
+import { Container, Icon } from "./styles";
+import { TouchableHighlightProps } from "react-native";
 
+type Props = TouchableHighlightProps;
 
-export default function PlusButton() {
-
-    return(
-        <Container
-           
-        >
-            <Icon/>
-        </Container>
-    );
+export function PlusButton({ ...rest }: Props) {
+  return (
+    <Container {...rest}>
+      <Icon />
+    </Container>
+  );
 }
-

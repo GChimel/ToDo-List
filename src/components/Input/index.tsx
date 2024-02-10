@@ -1,10 +1,8 @@
-import { Container } from './styles';
+import { Container } from "./styles";
+import { TextInputProps } from "react-native";
 
-export default function Input() {
-    return(
-        <Container
-            placeholder='Adicione uma nova tarefa'
-        >
-        </Container>
-    );
-};
+type Props = TextInputProps;
+
+export function Input({ ...rest }: Props) {
+  return <Container {...rest}></Container>;
+}

@@ -6,7 +6,7 @@ type Props = {
   type?: TextStyleProps;
 };
 
-export default function Stats({ title, counter, type = 'PRIMARY' }: Props) {
+export function Stats({ title, counter, type = "PRIMARY" }: Props) {
   return (
     <Container>
       <Title type={type}>{title}</Title>

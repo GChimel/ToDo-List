@@ -1,29 +1,29 @@
-import styled, {css} from 'styled-components/native'
-import { Trash } from 'phosphor-react-native';
+import styled, { css } from "styled-components/native";
+import { Trash } from "phosphor-react-native";
+import Checkbox from "expo-checkbox";
 
 export const Container = styled.View`
-
   height: 80px;
   max-width: 320px;
   min-width: 320px;
 
   justify-content: center;
   align-items: center;
-  
+
   flex-direction: row;
   justify-content: space-between;
 
   border-width: 1px;
   border-radius: 6px;
-  
-  ${({theme}) => css`
-    background-color: ${ theme.COLORS.GRAY_500};
+
+  ${({ theme }) => css`
+    background-color: ${theme.COLORS.GRAY_500};
     border-color: ${theme.COLORS.GRAY_700};
   `}
 `;
 
 export const Text = styled.Text`
-  ${({theme}) => css`
+  ${({ theme }) => css`
     font-size: ${theme.FONT_SIZE.M}px;
     font-family: ${theme.FONT_FAMILY.REGULAR};
     color: ${theme.COLORS.GRAY_100};
@@ -35,15 +35,24 @@ export const Text = styled.Text`
 export const ButtonIcon = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
-  
+
   margin-right: 15px;
 `;
 
 export const CheckBoxContainer = styled.View`
-  margin-left: 15px;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
 `;
 
-export const Icon = styled(Trash).attrs(({theme}) => ({
+export const CheckBoxContent = styled(Checkbox)`
+  width: 25px;
+  height: 25px;
+
+  border-radius: 50px;
+`;
+
+export const Icon = styled(Trash).attrs(({ theme }) => ({
   size: 28,
-  color: theme.COLORS.GRAY_300
+  color: theme.COLORS.GRAY_300,
 }))``;

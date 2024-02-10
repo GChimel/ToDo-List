@@ -1,27 +1,24 @@
-import { Container, Icon, ButtonIcon, Text, CheckBoxContainer } from './styled';
-import { CheckBox } from '../../components/CheckBox'
-import { CheckboxProps, CheckboxEvent } from 'expo-checkbox';
+import { TouchableOpacityProps } from "react-native";
+import { Container, Icon, ButtonIcon, Text, CheckBoxContainer, CheckBoxContent } from "./styled";
+import { CheckboxProps } from "expo-checkbox";
 
-type Props = CheckboxProps &  CheckboxEvent &{
+type Props = TouchableOpacityProps & {
   title: string;
-}
+  checkbox: CheckboxProps;
+};
 
-export default function Task({title, ...rest}: Props) {
+export function Task({ title, checkbox, ...rest }: Props) {
   return (
     <Container>
-
-      <CheckBoxContainer {...rest}>
-      
-        <CheckBox
-
-        />
+      <CheckBoxContainer>
+        <CheckBoxContent {...checkbox} />
       </CheckBoxContainer>
 
       <Text>{title}</Text>
-      
-      <ButtonIcon>
-        <Icon/>
+
+      <ButtonIcon {...rest}>
+        <Icon />
       </ButtonIcon>
     </Container>
-  )
+  );
 }
