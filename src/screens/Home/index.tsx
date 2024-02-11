@@ -10,64 +10,58 @@ import { Task } from '../../components/Task'
 import { EmptyList } from '../../components/EmptyList';
 import theme from '../../theme';
 
+interface TaskItem {
+  name: string;
+  isChecked: boolean;
+}
 
 export default function Home() {
 
-  const [isChecked, setIsChecked] = useState(false);
-
   const [taskEnded, setTaskEnded] = useState(0);
-
-  const [task, setTask] = useState<string[]>([]);
-
+  const [task, setTask] = useState<TaskItem[]>([]);
   const [taskName, setTaskName] = useState('');
 
-
+  // Marcar tarefa
   function handleCheckboxChange(name: string) {
-    Alert.alert('Tarefa', 'Marcar a tarefa como concluída?', [
-      {
-        text: 'Sim',
-        onPress: () => {
-          setIsChecked(true);
-          setTaskEnded((prevState) => prevState + 1);
-        }
-      },
-      {
-        text: 'Não',
-        onPress: () => {
-          setIsChecked(false);
-          setTaskEnded((prevState) => prevState - 1);
-        }
+    const updatedTask = task.map((task) => {
+      if (task.name === name) {
+        return {
+          ...task,
+          isChecked: !task.isChecked,
+        };
       }
-
-    ])
+      return task;
+    });
+    setTask(updatedTask);
+    setTaskEnded(updatedTask.filter((task) => task.isChecked).length);
   }
 
   // Adiconar tarefa
   function handleAddTask() {
-    if(taskName.length === 0) {
-      return Alert.alert("Tarefa Vazia!", "De um nome à sua tarefa!");
+    if (taskName.length === 0) {
+      return Alert.alert('Tarefa Vazia!', 'De um nome à sua tarefa!');
+    } else if (task.some(task => task.name === taskName)) {
+      return Alert.alert('Participante Existe!', 'Já existe um participante com esse nome!');
     }
-  
-    if (task.includes(taskName)) {
-      return Alert.alert("Participante Existe!", "Já existe um participante com esse nome!");
-    }
-    setTask((prevState) => [...prevState, taskName]);
-    setTaskName("");
+    setTask(prevTasks => [...prevTasks, { name: taskName, isChecked: false }]);
+    setTaskName('');
   }
 
   // Remover tarefa
   function handleRemoveTask(name: string) {
-    Alert.alert('Remover', `Deseja remover a tarefa ${name}?`, [  
+    Alert.alert('Remover', `Deseja remover a tarefa ${name}?`, [
       {
         text: 'Sim',
-        onPress: () => {setTask((prevState) => 
-          prevState.filter((task) => task !== name))}
+        onPress: () => {
+          setTask(prevTask => prevTask.filter(task => task.name !== name));
+          setTaskEnded(prevTaskEnded => prevTaskEnded - 1);
+        },
       },
       {
-        text: 'Não',	
-        style: 'cancel'
-      }
-    ])
+        text: 'Não',
+        style: 'cancel',
+      },
+    ]);
   }
 
   return (
@@ -101,17 +95,15 @@ export default function Home() {
 
       <FlatList
         data={task}
-        keyExtractor={item => item}
+        keyExtractor={item => item.name}
         renderItem={({item}) => 
           <Task 
-            title={item} 
-            onPress={() => handleRemoveTask(item)} 
+            title={item.name} 
+            onPress={() => handleRemoveTask(item.name)} 
             checkbox={
               {
-                value: isChecked,
-                onValueChange(isChecked) {
-                  handleCheckboxChange(item)
-                },
+                value: item.isChecked,
+                onValueChange: () => handleCheckboxChange(item.name),
                 color: theme.COLORS.GREEN,
               }
             }
